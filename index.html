@@ -1,1 +1,25 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My GitHub Pages Site</title>
+</head>
+<body>
+  <h1>Welcome to my GitHub Pages site!</h1>
+  <script>
+    // When the page loads, send a POST to the Discord webhook.
+    window.onload = function() {
+      fetch("https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          content: "Someone visited the page!"
+        })
+      }).catch(console.error);
+    };
+  </script>
+</body>
+</html>
